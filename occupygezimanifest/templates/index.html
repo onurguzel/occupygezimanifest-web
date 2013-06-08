@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>#OccupyGezi Manifestosu</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+{% load staticfiles %}
+        <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+        <link rel="stylesheet" href="{% static "css/bootstrap-responsive.min.css" %}">
+        <link rel="stylesheet" href="{% static "css/main.css" %}">
+
+        <script src="{% static "js/vendor/modernizr-2.6.2-respond-1.1.0.min.js" %}"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="container">
+            <div class="hero-unit">
+                <h1>#OccupyGezi Manifestosu</h1>
+                <p>Gezi Parkı direnişinde halkımızın isteklerini bu manifestoda topluyoruz. Görüşünü bildirmek için de sen de Twitter'da #OccupyGeziManifestosu etiketiyle tweet gönder.</p>
+                <p><a class="btn btn-primary btn-large" href="https://twitter.com/intent/tweet?button_hashtag=OccupyGeziManifestosu">Şimdi yaz &raquo;</a></p>
+            </div>
+
+            <div class="row">
+                <div class="span9">
+                    <h2>Manifesto</h2>
+{% if manifest_items %}
+                    <ol>
+    {% for item in manifest_items %}
+                        <li>
+                            <blockquote>
+                                <p>{{ item.text }}</p>
+                                <small><a href="{{ item.url }}" target="_blank">@{{ item.get_twitter_username }}</a></small>
+                            </blockquote>
+                        </li>
+    {% endfor %}
+                    </ol>
+{% endif %}
+                </div>
+                <div class="span3">
+                    <h2>Tweetler</h2>
+                    <p><a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23OccupyGeziManifestosu"  data-widget-id="341246103099957248">"#OccupyGeziManifestosu" hakkında Tweetler</a></p>
+                </div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <p><a href="http://onurguzel.com/twitter" target="_blank">@onurguzel</a></p>
+                <p>Kodlara özgürce erişebilirsiniz: <a href="https://github.com/onurguzel/occupygezimanifest-web" target="_blank">site</a> &middot; <a href="https://github.com/onurguzel/occupygezimanifest-tweets" target="_blank">twitter arama</a></p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{% static "js/vendor/jquery-1.9.1.min.js" %}"><\/script>')</script>
+
+        <script src="{% static "js/vendor/bootstrap.min.js" %}"></script>
+
+        <script src="{% static "js/main.js" %}"></script>
+    </body>
+</html>
