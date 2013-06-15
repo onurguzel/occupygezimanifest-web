@@ -126,16 +126,10 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'object_tools',
     'django.contrib.admin',
-    'order',
     'tweets',
     'gunicorn',
 )
-
-ORDERABLE_MODELS = {
-    'tweets.Tweet': ('order',),
-}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

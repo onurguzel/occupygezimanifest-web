@@ -5,7 +5,7 @@ from tweets.models import Tweet
 
 
 def index(request):
-    manifest_items = Tweet.objects.all().user_order_by('order')
+    manifest_items = Tweet.objects.all().order_by('-id')
     template = loader.get_template('index.html')
     context = Context({
         'manifest_items': manifest_items,

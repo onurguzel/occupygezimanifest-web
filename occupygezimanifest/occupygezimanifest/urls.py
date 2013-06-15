@@ -2,9 +2,7 @@ from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-import object_tools
 admin.autodiscover()
-object_tools.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
@@ -17,5 +15,4 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^object-tools/', include(object_tools.tools.urls)),
 )
