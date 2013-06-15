@@ -34,5 +34,8 @@ nosetests.xml
 .project
 .pydevproject
 
+# Local settings
+local_settings.py
+
 # Static files
 static
